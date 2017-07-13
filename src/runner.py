@@ -3,20 +3,25 @@
 import importlib
 
 
+def plugin_manager(provider, resource):
+    """Import provider resource modules"""
+    import_path = '.'.join(['foremast_1_{0}'.format(provider), 'plugins', provider, resource])
+    _module = importlib.import_module(import_path)
+    return _module
+
+
 def main():
     """Main."""
     provider = 'aws'
     resource = 'dns'
 
-    import_path = '.'.join(['foremast_1_{0}'.format(provider), 'plugins', provider, resource])
-    aws_dns_module = importlib.import_module(import_path)
+    aws_dns_module = plugin_manager(provider, resource)
     aws_dns = aws_dns_module.Dns()
     print(aws_dns.create())
 
     provider = 'gcp'
 
-    import_path = '.'.join(['foremast_2_{0}'.format(provider), 'plugins', resource, provider])
-    gcp_dns_module = importlib.import_module(import_path)
+    gcp_dns_module = plugin_manager(provider, resource)
     gcp_dns = gcp_dns_module.Dns()
     print(gcp_dns.create())
 
