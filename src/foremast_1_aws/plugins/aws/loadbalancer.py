@@ -1,5 +1,5 @@
 """AWS Elastic Load Balancers."""
-from foremast.plugins.loadbalancer import BaseLoadBalancer
+from foremast.loadbalancer.base import BaseLoadBalancer
 
 
 class LoadBalancer(BaseLoadBalancer):

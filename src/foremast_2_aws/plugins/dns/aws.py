@@ -1,5 +1,5 @@
 """AWS Route 53."""
-from foremast.plugins.dns import BaseDns
+from foremast.dns.base import BaseDns
 
 
 class Dns(BaseDns):
