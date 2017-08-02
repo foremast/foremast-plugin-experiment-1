@@ -1,5 +1,5 @@
 """Base DNS."""
-from .base import BasePlugin
+from ..common.base import BasePlugin
 
 
 class BaseDns(BasePlugin):

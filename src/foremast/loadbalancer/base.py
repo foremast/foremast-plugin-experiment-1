@@ -1,5 +1,5 @@
 """Base Load Balancer."""
-from .base import BasePlugin
+from ..common.base import BasePlugin
 
 
 class BaseLoadBalancer(BasePlugin):
