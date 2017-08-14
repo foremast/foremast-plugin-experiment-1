@@ -6,7 +6,7 @@ $ pip install pluginbase
 from pluginbase import PluginBase
 
 
-plugin_base = PluginBase(package='foremast.xplugins')
+plugin_base = PluginBase(package='foremast.plugins')
 
 plugin_source = plugin_base.make_plugin_source(
     searchpath=['./foremast_1_aws/plugins/aws'])
