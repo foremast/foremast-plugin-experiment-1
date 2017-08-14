@@ -3,13 +3,24 @@
 Install the necessary package with
 $ pip install pluginbase
 """
+from itertools import product
+
 from pluginbase import PluginBase
 
 
 plugin_base = PluginBase(package='foremast.plugins')
 
+
+services = ['dns', 'loadbalancer']
+providers = ['aws', 'gcp']
+all_plugins = []
+for service, provider in list(product(services, providers)):
+    path = './foremast/{}/provider/{}'.format(service, provider)
+    all_plugins.append(path)
+
+
 plugin_source = plugin_base.make_plugin_source(
-    searchpath=['./foremast_1_aws/plugins/aws'])
+    searchpath=all_plugins)
 
 print('List all plugins')
 for plugin in plugin_source.list_plugins():

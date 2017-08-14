@@ -5,7 +5,7 @@ import importlib
 
 def plugin_manager(provider, resource):
     """Import provider resource modules"""
-    import_path = '.'.join(['foremast_1_{0}'.format(provider), 'plugins', provider, resource])
+    import_path = '.'.join(['foremast', resource, 'provider', provider, resource])
     _module = importlib.import_module(import_path)
     return _module
 
