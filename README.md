@@ -18,4 +18,6 @@ cd src/
 
 ## Decisions
 
-* `provider.resource` or `resource.provider`
+* ~~`provider.resource`~~ or `resource.provider`
+
+We are moving with a `resource.provider` format because our project is currently organized in that manner.
