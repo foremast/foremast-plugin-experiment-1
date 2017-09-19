@@ -5,7 +5,15 @@ Experiments on foremast plugins
 
 ```bash
 cd src/
-./runner.py
+
+# Custom plugin system
+./plugin_manager_0.py
+
+# Using pluginbase
+./plugin_manager_1.py
+
+# Using pike
+./plugin_manager_2.py
 ```
 
 ## Decisions
